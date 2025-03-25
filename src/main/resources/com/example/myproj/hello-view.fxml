@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myproj.HelloController">
+   <children>
+      <Label fx:id="mainlabel" layoutX="219.0" layoutY="14.0" text="Угадай число!" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondarylabel" layoutX="133.0" layoutY="49.0" text="Попробуйте угадать число от 1 до 100">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberslabel" layoutX="60.0" layoutY="191.0" text="Числа:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="hintslabel" layoutX="167.0" layoutY="191.0" text="Подсказки:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="attemptslabel" layoutX="321.0" layoutY="191.0" text="Осталось попыток:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="guessingfield" layoutX="172.0" layoutY="142.0" />
+      <Button fx:id="checkbtn" layoutX="344.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnclick" text="Проверить" />
+      <Label fx:id="attemptsnumberlabel" layoutX="480.0" layoutY="193.0" text="8">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="wintext" layoutX="172.0" layoutY="95.0" text="Вы правильно угадали число!" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="losetext" layoutX="195.0" layoutY="95.0" text="Вы не смогли угадать число" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="guessednumbers" layoutX="60.0" layoutY="222.0" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="guessedhints" layoutX="167.0" layoutY="222.0" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
