@@ -94,7 +94,7 @@ public class HelloController {
                 return;
             }
 
-            --attempts; // Уменьшение количества попыток
+            attempts--; // Уменьшение количества попыток
             guesses.add(guess); // Добавление числа в список введенных
 
             updateLabels(); // Обновление текста лейблов
@@ -119,6 +119,8 @@ public class HelloController {
 
     // Метод для обновления текста лейблов
     private void updateLabels() {
+        attemptsnumberlabel.setText(Integer.toString(attempts));
+        guessednumbers.setText(formatList(guesses));
     }
 
     // Метод для форматирования списка чисел в виде столбика
