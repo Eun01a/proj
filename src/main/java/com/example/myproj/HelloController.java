@@ -52,8 +52,10 @@ public class HelloController {
 
     private int secretNumber; // Загаданное число
     private int attempts = 7; // Количество попыток
-    private List<Integer> guesses = new ArrayList<>(); // Список введенных чисел
-    private Random random = new Random(); // Генератор случайных чисел
+    private List<Integer> guesses = new ArrayList<>();// Список введенных чисел
+    private List<String> hints = new ArrayList<>();
+    private Random random = new Random();// Генератор случайных чисел
+
 
     // Метод инициализации контроллера, вызывается после загрузки FXML
     @FXML
@@ -121,6 +123,7 @@ public class HelloController {
     private void updateLabels() {
         attemptsnumberlabel.setText(Integer.toString(attempts));
         guessednumbers.setText(formatList(guesses));
+        guessedhints.setText(String.valueOf(hints));
     }
 
     // Метод для форматирования списка чисел в виде столбика
@@ -135,20 +138,14 @@ public class HelloController {
     // Метод для предоставления подсказки
     private void provideHint(int guess) {
         if (guess < secretNumber){
-            String s = "Больше!";
+
         }
         else{
-            String s = "Меньше!";
+
         }
+
     }
 
-    private String hintList (List < String > list) {
-        StringBuilder sb = new StringBuilder();
-        for (String s : list) {
-            sb.append(s).append("\n"); // Добавление каждого числа с новой строки
-        }
-        return sb.toString();
-    }
 
     // Метод для отображения всплывающего окна
     private void showAlert(AlertType type, String title, String content) {
