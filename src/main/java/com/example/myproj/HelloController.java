@@ -132,10 +132,22 @@ public class HelloController {
             return sb.toString();
     }
 
-
     // Метод для предоставления подсказки
     private void provideHint(int guess) {
+        if (guess < secretNumber){
+            String s = "Больше!";
+        }
+        else{
+            String s = "Меньше!";
+        }
+    }
 
+    private String hintList (List < String > list) {
+        StringBuilder sb = new StringBuilder();
+        for (String s : list) {
+            sb.append(s).append("\n"); // Добавление каждого числа с новой строки
+        }
+        return sb.toString();
     }
 
     // Метод для отображения всплывающего окна
