@@ -55,7 +55,8 @@ public class HelloController {
     private List<Integer> guesses = new ArrayList<>();// Список введенных чисел
     private List<String> hints = new ArrayList<>();
     private Random random = new Random();// Генератор случайных чисел
-
+    int guess;
+    String newHint;
 
     // Метод инициализации контроллера, вызывается после загрузки FXML
     @FXML
@@ -85,7 +86,7 @@ public class HelloController {
     // Метод для проверки введенного числа
     private void checkGuess() {
         try {
-            int guess = Integer.parseInt(guessingfield.getText()); // Преобразование введенного текста в число
+            guess = Integer.parseInt(guessingfield.getText()); // Преобразование введенного текста в число
             if (guess < 1 || guess > 100) { // Проверка диапазона введенного числа
                 showAlert(AlertType.ERROR, "Неверный ввод", "Пожалуйста, введите число от 1 до 100.");
                 return;
@@ -96,8 +97,19 @@ public class HelloController {
                 return;
             }
 
+            if(guess < secretNumber){
+                newHint = "Больше";
+            }
+            else if (guess > secretNumber){
+                newHint = "Меньше";
+            }
+            else{
+                newHint = " ";
+            }
+
             attempts--; // Уменьшение количества попыток
             guesses.add(guess); // Добавление числа в список введенных
+            hints.add(newHint);
 
             updateLabels(); // Обновление текста лейблов
 
@@ -111,8 +123,6 @@ public class HelloController {
                 return;
             }
 
-
-            provideHint(guess); // Предоставление подсказки
             guessingfield.clear(); // Очистка текстового поля
         } catch (NumberFormatException e) { // Обработка исключения, если введен неверный формат числа
             showAlert(AlertType.ERROR, "Неверный формат", "Пожалуйста, введите целое число.");
@@ -123,7 +133,7 @@ public class HelloController {
     private void updateLabels() {
         attemptsnumberlabel.setText(Integer.toString(attempts));
         guessednumbers.setText(formatList(guesses));
-        guessedhints.setText(String.valueOf(hints));
+        guessedhints.setText(hintList(hints));
     }
 
     // Метод для форматирования списка чисел в виде столбика
@@ -135,15 +145,13 @@ public class HelloController {
             return sb.toString();
     }
 
-    // Метод для предоставления подсказки
-    private void provideHint(int guess) {
-        if (guess < secretNumber){
 
+    private String hintList(List < String > list) {
+        StringBuilder sb = new StringBuilder();
+        for (String s  : list) {
+            sb.append(s).append("\n");
         }
-        else{
-
-        }
-
+        return sb.toString();
     }
 
 
