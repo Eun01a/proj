@@ -68,7 +68,8 @@ public class HelloController {
     private void startNewGame() {
         secretNumber = random.nextInt(100) + 1; // Генерация случайного числа от 1 до 100
         attempts = 7; // Установка количества попыток
-        guesses.clear(); // Очистка списка введенных чисел
+        guesses.clear();// Очистка списка введенных чисел
+        hints.clear();
         updateLabels(); // Обновление текста лейблов
         guessingfield.clear(); // Очистка текстового поля
         guessedhints.setText("");
@@ -108,7 +109,7 @@ public class HelloController {
             }
 
             attempts--; // Уменьшение количества попыток
-            guesses.add(guess); // Добавление числа в список введенных
+            guesses.add(guess);// Добавление числа в список введенных
             hints.add(newHint);
 
             updateLabels(); // Обновление текста лейблов
