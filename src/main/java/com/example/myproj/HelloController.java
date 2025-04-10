@@ -36,7 +36,7 @@ public class HelloController {
     private Label hintslabel; // Лейбл для отображения текста "Подсказки"
 
     @FXML
-    private Label losetext; // Лейбл для отображения текста при проигрыше
+    private Label loseText; // Лейбл для отображения текста при проигрыше
 
     @FXML
     private Label mainlabel; // Лейбл для основного текста
@@ -48,7 +48,7 @@ public class HelloController {
     private Label secondarylabel; // Лейбл для второстепенного текста
 
     @FXML
-    private Label wintext; // Лейбл для отображения текста при выигрыше
+    private Label winText; // Лейбл для отображения текста при выигрыше
 
     private int secretNumber; // Загаданное число
     private int attempts = 7; // Количество попыток
@@ -56,6 +56,8 @@ public class HelloController {
     private List<String> hints = new ArrayList<>();
     private Random random = new Random();// Генератор случайных чисел
     int guess;
+    int wins;
+    int losses;
     String newHint;
 
     // Метод инициализации контроллера, вызывается после загрузки FXML
@@ -73,8 +75,6 @@ public class HelloController {
         updateLabels(); // Обновление текста лейблов
         guessingfield.clear(); // Очистка текстового поля
         guessedhints.setText("");
-        losetext.setVisible(false); // Скрытие текста проигрыша
-        wintext.setVisible(false); // Скрытие текста выигрыша
         System.out.println(secretNumber);
     }
 
@@ -135,6 +135,8 @@ public class HelloController {
         attemptsnumberlabel.setText(Integer.toString(attempts));
         guessednumbers.setText(formatList(guesses));
         guessedhints.setText(hintList(hints));
+        winText.setText("Побед: " + wins);
+        loseText.setText("Поражений: " + losses);
     }
 
     // Метод для форматирования списка чисел в виде столбика
@@ -167,12 +169,14 @@ public class HelloController {
 
     // Метод для обработки выигрыша
     private void winGame() {
+        wins++;
         showAlert(AlertType.INFORMATION, "Выигрыш!", "Вы угадали число. Было загадано " + secretNumber + ".");
         startNewGame();
     }
 
     // Метод для обработки проигрыша
     private void loseGame() {
+        losses++;
         showAlert(AlertType.INFORMATION, "Поражение!", "Вы не угадали число. Было загадано " + secretNumber + ".");
         startNewGame();
     }

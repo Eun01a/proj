@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myproj.HelloController">
+<Pane blendMode="SOFT_LIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: 453f6b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myproj.HelloController">
    <children>
       <Label fx:id="mainlabel" layoutX="219.0" layoutY="14.0" text="Угадай число!" textAlignment="CENTER">
          <font>
@@ -35,26 +35,26 @@
       </Label>
       <TextField fx:id="guessingfield" layoutX="172.0" layoutY="142.0" />
       <Button fx:id="checkbtn" layoutX="344.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnclick" text="Проверить" />
-      <Label fx:id="attemptsnumberlabel" layoutX="480.0" layoutY="193.0" text="8">
+      <Label fx:id="attemptsnumberlabel" layoutX="480.0" layoutY="193.0">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label fx:id="wintext" layoutX="172.0" layoutY="95.0" text="Вы правильно угадали число!" visible="false">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="losetext" layoutX="195.0" layoutY="95.0" text="Вы не смогли угадать число" visible="false">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
       <Label fx:id="guessednumbers" layoutX="60.0" layoutY="222.0" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
       <Label fx:id="guessedhints" layoutX="167.0" layoutY="222.0" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="winText" layoutX="328.0" layoutY="235.0" text="Побед:" textFill="#74edd7">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="loseText" layoutX="328.0" layoutY="265.0" text="Поражений:" textFill="#f02936">
          <font>
             <Font size="16.0" />
          </font>
