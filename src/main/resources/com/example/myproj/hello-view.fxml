@@ -6,45 +6,45 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane blendMode="SOFT_LIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: 453f6b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myproj.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #22285f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myproj.HelloController">
    <children>
-      <Label fx:id="mainlabel" layoutX="219.0" layoutY="14.0" text="Угадай число!" textAlignment="CENTER">
+      <Label fx:id="mainlabel" layoutX="219.0" layoutY="14.0" text="Угадай число!" textAlignment="CENTER" textFill="#f5e5ff">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="secondarylabel" layoutX="133.0" layoutY="49.0" text="Попробуйте угадать число от 1 до 100">
+      <Label fx:id="secondarylabel" layoutX="133.0" layoutY="49.0" text="Попробуйте угадать число от 1 до 100" textFill="#f5e5ff">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="numberslabel" layoutX="60.0" layoutY="191.0" text="Числа:">
+      <Label fx:id="numberslabel" layoutX="60.0" layoutY="191.0" text="Числа:" textFill="#f5e5ff">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="hintslabel" layoutX="167.0" layoutY="191.0" text="Подсказки:">
+      <Label fx:id="hintslabel" layoutX="167.0" layoutY="191.0" text="Подсказки:" textFill="#f5e5ff">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="attemptslabel" layoutX="321.0" layoutY="191.0" text="Осталось попыток:">
+      <Label fx:id="attemptslabel" layoutX="328.0" layoutY="193.0" prefHeight="22.0" prefWidth="153.0" text="Осталось попыток:" textFill="#f5e5ff">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="guessingfield" layoutX="172.0" layoutY="142.0" />
-      <Button fx:id="checkbtn" layoutX="344.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnclick" text="Проверить" />
-      <Label fx:id="attemptsnumberlabel" layoutX="480.0" layoutY="193.0">
+      <TextField fx:id="guessingfield" layoutX="172.0" layoutY="142.0" style="-fx-background-color: a399e6;" />
+      <Button fx:id="checkbtn" layoutX="344.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnclick" style="-fx-background-color: #6760ae;" text="Проверить" textFill="#f5e5ff" />
+      <Label fx:id="attemptsnumberlabel" layoutX="480.0" layoutY="193.0" prefHeight="22.0" prefWidth="21.0" textFill="#ffe5ae">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label fx:id="guessednumbers" layoutX="60.0" layoutY="222.0" wrapText="true">
+      <Label fx:id="guessednumbers" layoutX="60.0" layoutY="222.0" textFill="#ffe5ae" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="guessedhints" layoutX="167.0" layoutY="222.0" wrapText="true">
+      <Label fx:id="guessedhints" layoutX="167.0" layoutY="222.0" textFill="#ffe5ae" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
