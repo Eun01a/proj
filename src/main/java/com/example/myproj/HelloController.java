@@ -2,11 +2,9 @@ package com.example.myproj;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -158,13 +156,17 @@ public class HelloController {
     }
 
 
+    @FXML
+    private DialogPane dialog;
+
     // Метод для отображения всплывающего окна
     private void showAlert(AlertType type, String title, String content) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(content);
-        alert.showAndWait(); // Отображение окна и ожидание закрытия
+        alert.showAndWait();// Отображение окна и ожидание закрыти
+
     }
 
     // Метод для обработки выигрыша
@@ -180,4 +182,5 @@ public class HelloController {
         showAlert(AlertType.INFORMATION, "Поражение!", "Вы не угадали число. Было загадано " + secretNumber + ".");
         startNewGame();
     }
+
 }
