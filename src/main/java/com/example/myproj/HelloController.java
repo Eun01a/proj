@@ -73,7 +73,6 @@ public class HelloController {
         updateLabels(); // Обновление текста лейблов
         guessingfield.clear(); // Очистка текстового поля
         guessedhints.setText("");
-        System.out.println(secretNumber);
     }
 
     // Обработчик нажатия на кнопку "Проверить"
